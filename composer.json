@@ -1,0 +1,33 @@
+{
+    "name" : "pandora/rails-js-bundle",
+    "description" : "A Rails Js Bundle",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "angonyfox",
+        "email" : "angonyfox@gmail.com"
+    }],
+    "keywords" : [
+        "demo bundle"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+      "rails/jquery-ujs": "dev-master"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Pandora\\RailsJsBundle" : ""
+        }
+    },
+    "target-dir" : "Pandora/RailsJsBundle",
+    "repositories" : [{
+        "type" : "vcs",
+        "url": "https://github.com/rails/jquery-ujs.git"
+    }],
+    "extra" : {
+      "branch-alias": {
+        "dev-master": "1.x-dev"
+      }
+    }
+}
