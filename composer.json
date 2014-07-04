@@ -20,6 +20,9 @@
     "scripts": {
       "post-install-cmd": [
         "Command\\ScriptHandler::postInstallSymlink"
+      ],
+      "post-update-cmd": [
+        "Command\\ScriptHandler::postInstallSymlink"
       ]
     }
 }
