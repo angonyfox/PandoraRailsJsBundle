@@ -91,12 +91,12 @@ class ScriptHandler extends ContainerAwareCommand
       $symlinkTarget = "";
       $symlinkName = self::$targetPath . "jquery-ujs.js";
 
-      // $IO->write("Checking Symlink", FALSE);
+      $IO->write("Checking Symlink", FALSE);
       // if (false === self::checkSymlink($symlinkTarget, $symlinkName, true)) {
       //     $IO->write("Creating Symlink: " . $symlinkName, FALSE);
       //     self::createSymlink($symlinkTarget, $symlinkName);
       // }
-      // $IO->write(" ... <info>OK</info>");
+      $IO->write(" ... <info>OK</info>");
 
     }
 
