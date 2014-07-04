@@ -19,7 +19,7 @@
     },
     "scripts": {
       "post-install-cmd": [
-        "Pandora\\RailsJsBundle\\Command\\ScriptHandler::postInstallSymlink"
+        "Command\\ScriptHandler::postInstallSymlink"
       ]
     }
 }
