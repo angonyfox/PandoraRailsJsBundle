@@ -1,0 +1,1 @@
+../../../vendor/rails/jquery-ujs/src/rails.js

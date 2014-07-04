@@ -17,13 +17,5 @@
             "Pandora\\RailsJsBundle" : ""
         }
     },
-    "target-dir": "Pandora/RailsJsBundle",
-    "scripts": {
-      "post-install-cmd": [
-        "Pandora\\RailsJsBundle\\Command\\ScriptHandler::postInstallSymlink"
-      ],
-      "post-update-cmd": [
-        "Pandora\\RailsJsBundle\\Command\\ScriptHandler::postInstallSymlink"
-      ]
-    }
+    "target-dir": "Pandora/RailsJsBundle"
 }
