@@ -13,7 +13,7 @@
         "MIT"
     ],
     "require" : {
-      "rails/jquery-ujs": "dev-master"
+      "rails/jquery-ujs": "1.*"
     },
     "autoload" : {
         "psr-0" : {
