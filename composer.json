@@ -12,33 +12,10 @@
     "license" : [
         "MIT"
     ],
-    "require" : {
-      "rails/jquery-ujs": "1.*"
-    },
     "autoload" : {
         "psr-0" : {
             "Pandora\\RailsJsBundle" : ""
         }
     },
-    "target-dir" : "Pandora/RailsJsBundle",
-    "repositories" : [
-      {
-        "type" : "package",
-        "package": {
-          "name": "rails/jquery-ujs",
-          "version": "1.0",
-          "dist": {
-            "url": "https://github.com/rails/jquery-ujs/archive/v1.0.0.zip",
-            "type": "zip"
-          },
-          "source": {
-            "type": "git",
-            "url": "https://github.com/rails/jquery-ujs.git",
-            "reference": "master"
-          }
-        }
-      }
-    ],
-    "extra" : {
-    }
+    "target-dir" : "Pandora/RailsJsBundle"
 }
