@@ -2,14 +2,15 @@
 
 namespace Pandora\RailsJsBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
+// use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+// use Symfony\Component\Console\Input\InputArgument;
+// use Symfony\Component\Console\Input\InputInterface;
+// use Symfony\Component\Console\Input\InputOption;
+// use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
+use Composer\Script\Event;
 
-class ScriptHandler extends ContainerAwareCommand
+class ScriptHandler // extends ContainerAwareCommand
 {
     public static $targetPath = DIRECTORY_SEPARATOR . "Resources" . DIRECTORY_SEPARATOR . "public". DIRECTORY_SEPARATOR . "js" . DIRECTORY_SEPARATOR;
     /**
@@ -100,42 +101,42 @@ class ScriptHandler extends ContainerAwareCommand
 
     }
 
-    protected function configure()
-    {
-      $this
-        ->setDescription("Check and if possible install symlink to " . static::$targetSuffix)
-        ->addOption('no-symlink', null, InputOption::VALUE_NONE, 'Use hard copy/mirroring instead of symlink. This is required for Windows without administrator privileges.');
-    }
-
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-      $this->input = $input;
-      $this->output = $output;
-
-      // $symlinkTarget
-      // $symlinkName
-      // Automatically detect if on Win XP where symlink will allways fail
-      if ($input->getOption('no-symlink') || PHP_OS == "WINNT") {
-          $this->output->write("Checking destination");
-
-          if (true === self::checkSymlink($symlinkTarget, $symlinkName)) {
-              $this->output->writeln(" ... <comment>symlink already exists</comment>");
-          } else {
-              $this->output->writeln(" ... <comment>not existing</comment>");
-              $this->output->writeln("Mirroring from: " . $symlinkName);
-              $this->output->write("for target: " . $symlinkTarget);
-              self::createMirror($symlinkTarget, $symlinkName);
-          }
-      } else {
-          $this->output->write("Checking symlink");
-          if (false === self::checkSymlink($symlinkTarget, $symlinkName, true)) {
-              $this->output->writeln(" ... <comment>not existing</comment>");
-              $this->output->writeln("Creating symlink: " . $symlinkName);
-              $this->output->write("for target: " . $symlinkTarget);
-              self::createSymlink($symlinkTarget, $symlinkName);
-          }
-      }
-
-      $this->output->writeln(" ... <info>OK</info>");
-    }
+    // protected function configure()
+    // {
+    //   $this
+    //     ->setDescription("Check and if possible install symlink to " . static::$targetSuffix)
+    //     ->addOption('no-symlink', null, InputOption::VALUE_NONE, 'Use hard copy/mirroring instead of symlink. This is required for Windows without administrator privileges.');
+    // }
+    //
+    // protected function execute(InputInterface $input, OutputInterface $output)
+    // {
+    //   $this->input = $input;
+    //   $this->output = $output;
+    //
+    //   // $symlinkTarget
+    //   // $symlinkName
+    //   // Automatically detect if on Win XP where symlink will allways fail
+    //   if ($input->getOption('no-symlink') || PHP_OS == "WINNT") {
+    //       $this->output->write("Checking destination");
+    //
+    //       if (true === self::checkSymlink($symlinkTarget, $symlinkName)) {
+    //           $this->output->writeln(" ... <comment>symlink already exists</comment>");
+    //       } else {
+    //           $this->output->writeln(" ... <comment>not existing</comment>");
+    //           $this->output->writeln("Mirroring from: " . $symlinkName);
+    //           $this->output->write("for target: " . $symlinkTarget);
+    //           self::createMirror($symlinkTarget, $symlinkName);
+    //       }
+    //   } else {
+    //       $this->output->write("Checking symlink");
+    //       if (false === self::checkSymlink($symlinkTarget, $symlinkName, true)) {
+    //           $this->output->writeln(" ... <comment>not existing</comment>");
+    //           $this->output->writeln("Creating symlink: " . $symlinkName);
+    //           $this->output->write("for target: " . $symlinkTarget);
+    //           self::createSymlink($symlinkTarget, $symlinkName);
+    //       }
+    //   }
+    //
+    //   $this->output->writeln(" ... <info>OK</info>");
+    // }
 }
